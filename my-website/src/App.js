@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux'
+import { ThemeProvider } from '@material-ui/core/styles'
+import { Button, CssBaseline, MuiThemeProvider } from '@material-ui/core'
 
-function App() {
+import ThemeToggler from 'components/ThemeToggler'
+import ThemePalleteTray from 'components/ThemePalleteTray'
+import './App.css'
+import MyDrawer from 'parts/MyDrawer'
+
+const App = ({ theme, keys }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <MuiThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <MyDrawer />
+        <Button color="primary" variant="contained">
+          hizzzzccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+        </Button>
+        <ThemePalleteTray />
+        {/* <ThemeToggler /> */}
+      </ThemeProvider>
+    </MuiThemeProvider>
+  )
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    theme: state.themes.currentTheme,
+    keys: state.themes.currentTheme.key,
+  }
+}
+export default connect(mapStateToProps, null)(App)
