@@ -13,9 +13,9 @@ const App = ({ theme, keys }) => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <MyDrawer />
-        <Button color="primary" variant="contained">
+        {/* <Button color="primary" variant="contained">
           hizzzzccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-        </Button>
+        </Button> */}
         <ThemePalleteTray />
         {/* <ThemeToggler /> */}
       </ThemeProvider>

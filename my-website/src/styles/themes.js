@@ -2,6 +2,7 @@ import { createMuiTheme } from '@material-ui/core/styles'
 
 import THEMES_KEYS from 'utils/constants/theme-keys'
 import * as ACTIONS from 'store/actions'
+import { THEME_CUSTOM_PROPS } from 'utils/helpers/custom-theme-props'
 
 export const DARK = createMuiTheme({
   key: THEMES_KEYS.DARK,
@@ -26,6 +27,7 @@ export const DARK = createMuiTheme({
       cardText: '#b4b6b9',
     },
   },
+  layout: THEME_CUSTOM_PROPS.layout,
 })
 
 export const LIGHT_TYPE_ONE = createMuiTheme({
@@ -50,6 +52,7 @@ export const LIGHT_TYPE_ONE = createMuiTheme({
       cardColor: '#151e29',
     },
   },
+  layout: THEME_CUSTOM_PROPS.layout,
 })
 
 export const LIGHT_TYPE_TWO = createMuiTheme({
@@ -73,6 +76,7 @@ export const LIGHT_TYPE_TWO = createMuiTheme({
       projectBody: '#EBECF0',
     },
   },
+  layout: THEME_CUSTOM_PROPS.layout,
 })
 
 export const LIGHT_TYPE_THREE = createMuiTheme({
@@ -97,6 +101,7 @@ export const LIGHT_TYPE_THREE = createMuiTheme({
       projectBody: '#fff',
     },
   },
+  layout: THEME_CUSTOM_PROPS.layout,
 })
 
 export const LIGHT_TYPE_FOUR = createMuiTheme({
@@ -120,6 +125,7 @@ export const LIGHT_TYPE_FOUR = createMuiTheme({
       projectBody: 'lightgrey',
     },
   },
+  layout: THEME_CUSTOM_PROPS.layout,
 })
 
 export const LIGHT_TYPE_FIVE = createMuiTheme({
@@ -143,6 +149,7 @@ export const LIGHT_TYPE_FIVE = createMuiTheme({
       projectBody: '#fff',
     },
   },
+  layout: THEME_CUSTOM_PROPS.layout,
 })
 
 export const LIGHT_TYPE_SIX = createMuiTheme({
@@ -166,6 +173,7 @@ export const LIGHT_TYPE_SIX = createMuiTheme({
       projectBody: '#fff',
     },
   },
+  layout: THEME_CUSTOM_PROPS.layout,
 })
 
 export const LIGHT_TYPE_SEVEN = createMuiTheme({
@@ -190,6 +198,7 @@ export const LIGHT_TYPE_SEVEN = createMuiTheme({
       cardColor: '#151e29',
     },
   },
+  layout: THEME_CUSTOM_PROPS.layout,
 })
 
 export const LIGHT_TYPE_EIGHT = createMuiTheme({
@@ -214,4 +223,5 @@ export const LIGHT_TYPE_EIGHT = createMuiTheme({
       cardColor: '#151e29',
     },
   },
+  layout: THEME_CUSTOM_PROPS.layout,
 })

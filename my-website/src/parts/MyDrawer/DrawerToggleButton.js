@@ -1,35 +1,22 @@
-import { Box, IconButton, makeStyles } from '@material-ui/core'
-import {
-  ChevronLeft,
-  ChevronLeftOutlined,
-  ChevronLeftRounded,
-  ChevronRightRounded,
-} from '@material-ui/icons'
-import makeMyStyle from 'styles/makeMyStyle'
+import { IconButton } from '@material-ui/core'
+import { ChevronLeftRounded, ChevronRightRounded } from '@material-ui/icons'
+import clsx from 'clsx'
 
-const useStyles = makeStyles(theme => ({
-  drawer: {
-    // width: theme.custom.layout.expandedDrawerWidth,
-    // flexShrink: 0,
-    // whiteSpace: 'nowrap',
-    position: 'fixed',
-    zIndex: theme.zIndex.drawer + 1,
-    transform: 'translateX(+50%)',
-  },
-}))
+import { drawerStyles } from './drawer-styles'
+
 const DrawerToggleButton = ({ isOpen, setIsOpen }) => {
   console.log(isOpen)
-  const classes = useStyles()
+  const classes = drawerStyles()
   return (
-    <Box className={classes.drawer}>
-      <IconButton
-        size="small"
-        type="span"
-        component="span"
-        onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <ChevronLeftRounded /> : <ChevronRightRounded />}
-      </IconButton>{' '}
-    </Box>
+    <IconButton
+      className={clsx(classes.drawerToggleButton, {
+        [classes.drawerToggleIconLeft]: isOpen,
+        [classes.drawerToggleIconRight]: !isOpen,
+      })}
+      size="small"
+      onClick={() => setIsOpen(!isOpen)}>
+      {isOpen ? <ChevronLeftRounded /> : <ChevronRightRounded />}
+    </IconButton>
   )
 }
 
