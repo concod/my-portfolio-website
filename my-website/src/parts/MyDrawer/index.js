@@ -4,6 +4,7 @@ import DrawerToggleButton from 'parts/MyDrawer/DrawerToggleButton'
 import { Box, Container } from '@material-ui/core'
 import clsx from 'clsx'
 import { drawerStyles } from './drawer-styles'
+import DrawerMenulist from './DrawerMenuList'
 
 const MyDrawer = () => {
   const [isOpen, setIsOpen] = useState(true)
@@ -28,6 +29,7 @@ const MyDrawer = () => {
       <DrawerToggleButton isOpen={isOpen} setIsOpen={setIsOpen} />
       {/* <Box bgcolor="yellow" overflow="hidden"> */}
       <Box>hieeeeeeeeeeeeeeeeeee</Box>
+      <DrawerMenulist />
       {/* </Box> */}
     </Drawer>
   )

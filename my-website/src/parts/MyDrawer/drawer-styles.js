@@ -1,6 +1,11 @@
 import { makeStyles } from '@material-ui/core'
 
 export const drawerStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    // maxWidth: 200,
+    backgroundColor: 'green',
+  },
   drawer: {
     width: theme.layout.expandedDrawerWidth,
     flexShrink: 0,
@@ -42,5 +47,8 @@ export const drawerStyles = makeStyles(theme => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     marginLeft: theme.layout.collapsedDrawerWidth,
+  },
+  drawerMenuListIcon: {
+    minWidth: 40,
   },
 }))
