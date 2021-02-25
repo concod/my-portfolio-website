@@ -3,8 +3,6 @@ import { makeStyles } from '@material-ui/core'
 export const drawerStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    // maxWidth: 200,
-    // backgroundColor: 'green',
   },
   drawer: {
     width: theme.layout.expandedDrawerWidth,
@@ -55,5 +53,22 @@ export const drawerStyles = makeStyles(theme => ({
   },
   menuListText: {
     textTransform: 'uppercase',
+    // fontSize: '14px !important',
+  },
+  leftBar: {
+    backgroundColor: 'yellow',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    flexShrink: 0,
+    height: '100%',
+    width: theme.layout.leftBarWidth,
+  },
+  leftBarIcon: {
+    minWidth: 0,
+    fontSize: 32,
+  },
+  nestedLeftPadding: {
+    paddingLeft: theme.spacing(1),
   },
 }))

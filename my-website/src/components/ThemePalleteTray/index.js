@@ -25,9 +25,9 @@ const ThemePalleteTray = () => {
 
   return (
     <Box
-      display="flex"
-      alignItems="center"
-      position="fixed"
+      display='flex'
+      alignItems='center'
+      position='fixed'
       right={shiftLeft ? '0px' : '-130px'}
       style={{ transition: 'all 0.2s ease' }}
       zIndex={20}>
@@ -43,13 +43,13 @@ const ThemePalleteTray = () => {
           setEnteredPallete(false)
           setShiftLeft(false)
         }}
-        bgcolor="red"
-        display="flex"
-        alignContent="flex-start"
-        height="fit-content"
-        padding="10px"
+        bgcolor='red'
+        display='flex'
+        alignContent='flex-start'
+        height='fit-content'
+        padding='10px'
         width={trayWidth}
-        flexWrap="wrap">
+        flexWrap='wrap'>
         {Object.entries(THEMES).map(
           ([key, value], index) =>
             key !== THEMES_KEYS.DARK && (
@@ -66,7 +66,7 @@ const ThemePalleteTray = () => {
                   hvSc: 1.07,
                   avSc: 1,
                 })}
-                variant="outlined"
+                variant='outlined'
               />
             ),
         )}

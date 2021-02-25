@@ -24,12 +24,12 @@ const MyDrawer = () => {
           classes.paper,
         ),
       }}
-      variant="permanent"
-      anchor="left"
+      variant='permanent'
+      anchor='left'
       open={isOpen}>
       <DrawerToggleButton isOpen={isOpen} setIsOpen={setIsOpen} />
       {/* <Box bgcolor="yellow" overflow="hidden"> */}
-      <Box display="flex">
+      <Box display='flex' height='100vh'>
         <DrawerLeftBar />
         <DrawerMenulist />
       </Box>

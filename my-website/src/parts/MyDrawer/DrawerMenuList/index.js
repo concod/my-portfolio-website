@@ -7,20 +7,15 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@material-ui/core'
-
 import {
   ChevronRight,
-  ChevronRightRounded,
   ExpandMoreRounded,
-  InboxRounded,
-  MailOutlineRounded,
   RemoveRounded,
 } from '@material-ui/icons'
-import ExpandLess from '@material-ui/icons/ExpandLess'
-import ExpandMore from '@material-ui/icons/ExpandMore'
 import { drawerStyles } from '../drawer-styles'
 import { generateListKeys } from 'utils/helpers/generate-list-keys'
 import { drawerMenuItems } from '../drawer-menu-items'
+import { PaddingLeftRight16, Padding16x16 } from 'components/PaddingSet'
 
 const DrawerMenulist = () => {
   const classes = drawerStyles()
@@ -66,8 +61,8 @@ const DrawerMenulist = () => {
   }
   console.log(menuItemOpen)
   return (
-    <>
-      <List component='nav' className={classes.root}>
+    <Padding16x16 className={classes.root}>
+      <List component='nav'>
         {drawerMenuItems.map((menuItem, index) => (
           <Box key={generateListKeys('box', index)}>
             <ListItem
@@ -105,7 +100,7 @@ const DrawerMenulist = () => {
           </Box>
         ))}
       </List>
-    </>
+    </Padding16x16>
   )
 }
 

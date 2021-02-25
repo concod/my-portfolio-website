@@ -1,5 +1,9 @@
 import {
+  AccountCircleRounded,
+  ColorLensRounded,
+  HomeRounded,
   ImportContacts,
+  SearchRounded,
   SportsEsportsRounded,
   TabletMacRounded,
   WebRounded,
@@ -81,5 +85,27 @@ export const drawerMenuItems = [
         title: 'ABkk',
       },
     ],
+  },
+]
+
+export const leftBarTopItems = [
+  {
+    title: 'Home',
+    icon: <HomeRounded fontSize='inherit' />,
+  },
+  {
+    title: 'Search',
+    icon: <SearchRounded fontSize='inherit' />,
+  },
+]
+
+export const leftBarBottomItmes = [
+  {
+    title: 'Theme',
+    icon: <ColorLensRounded fontSize='inherit' />,
+  },
+  {
+    title: 'Avatar',
+    icon: <AccountCircleRounded fontSize='inherit' />,
   },
 ]
