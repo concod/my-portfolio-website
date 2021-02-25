@@ -4,7 +4,7 @@ export const drawerStyles = makeStyles(theme => ({
   root: {
     width: '100%',
     // maxWidth: 200,
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
   },
   drawer: {
     width: theme.layout.expandedDrawerWidth,
@@ -32,6 +32,8 @@ export const drawerStyles = makeStyles(theme => ({
   drawerToggleButton: {
     position: 'fixed',
     transform: 'translateX(-50%)',
+    backgroundColor: theme.palette.primary.main,
+    color: 'black',
     zIndex: theme.zIndex.drawer + 1,
   },
   drawerToggleIconLeft: {
@@ -50,5 +52,8 @@ export const drawerStyles = makeStyles(theme => ({
   },
   drawerMenuListIcon: {
     minWidth: 40,
+  },
+  menuListText: {
+    textTransform: 'uppercase',
   },
 }))

@@ -1,6 +1,9 @@
+const WIDTH = 50
+
 export const THEME_CUSTOM_PROPS = {
   layout: {
-    expandedDrawerWidth: 200,
+    drawerLeftBarWidth: WIDTH,
+    expandedDrawerWidth: WIDTH + 240,
     collapsedDrawerWidth: 30,
   },
 }

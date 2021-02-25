@@ -15,10 +15,10 @@ export const drawerMenuItems = [
         title: 'ABC',
       },
       {
-        title: 'ABC',
+        title: 'cd',
       },
       {
-        title: 'ABC',
+        title: 'ef',
       },
     ],
   },
@@ -27,13 +27,13 @@ export const drawerMenuItems = [
     icon: <WorkRounded />,
     subMenuItems: [
       {
-        title: 'ABC',
+        title: 'gh',
       },
       {
-        title: 'ABC',
+        title: 'oj',
       },
       {
-        title: 'ABC',
+        title: 'kl',
       },
     ],
   },
@@ -42,13 +42,13 @@ export const drawerMenuItems = [
     icon: <ImportContacts />,
     subMenuItems: [
       {
-        title: 'ABC',
+        title: 'mn',
       },
       {
-        title: 'ABC',
+        title: 'ol',
       },
       {
-        title: 'ABC',
+        title: 'kC',
       },
     ],
   },
@@ -57,13 +57,13 @@ export const drawerMenuItems = [
     icon: <SportsEsportsRounded />,
     subMenuItems: [
       {
-        title: 'ABC',
+        title: 'pllC',
       },
       {
-        title: 'ABC',
+        title: 'Add',
       },
       {
-        title: 'ABC',
+        title: 'dd',
       },
     ],
   },
@@ -72,13 +72,13 @@ export const drawerMenuItems = [
     icon: <TabletMacRounded />,
     subMenuItems: [
       {
-        title: 'ABC',
+        title: 'dd',
       },
       {
-        title: 'ABC',
+        title: 'ABddC',
       },
       {
-        title: 'ABC',
+        title: 'ABkk',
       },
     ],
   },

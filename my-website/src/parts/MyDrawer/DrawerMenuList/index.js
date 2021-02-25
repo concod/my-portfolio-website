@@ -7,12 +7,20 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@material-ui/core'
-import { InboxRounded, MailOutlineRounded } from '@material-ui/icons'
+
+import {
+  ChevronRight,
+  ChevronRightRounded,
+  ExpandMoreRounded,
+  InboxRounded,
+  MailOutlineRounded,
+  RemoveRounded,
+} from '@material-ui/icons'
 import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import { drawerStyles } from '../drawer-styles'
 import { generateListKeys } from 'utils/helpers/generate-list-keys'
-import { drawerMenuItems } from './drawer-menu-items'
+import { drawerMenuItems } from '../drawer-menu-items'
 
 const DrawerMenulist = () => {
   const classes = drawerStyles()
@@ -59,7 +67,7 @@ const DrawerMenulist = () => {
   console.log(menuItemOpen)
   return (
     <>
-      <List component="nav" className={classes.root}>
+      <List component='nav' className={classes.root}>
         {drawerMenuItems.map((menuItem, index) => (
           <Box key={generateListKeys('box', index)}>
             <ListItem
@@ -69,25 +77,30 @@ const DrawerMenulist = () => {
               <ListItemIcon className={classes.drawerMenuListIcon}>
                 {menuItem.icon}
               </ListItemIcon>
-              <ListItemText primary={menuItem.title} />
+              <ListItemText
+                className={classes.menuListText}
+                primary={menuItem.title}
+              />
               {menuItemOpen.currentOpenindex === index ? (
-                <ExpandLess />
+                <ExpandMoreRounded />
               ) : (
-                <ExpandMore />
+                <ChevronRight />
               )}
             </ListItem>
             <Collapse
               in={index === menuItemOpen.currentOpenindex && menuItemOpen.open}
-              timeout="auto"
+              timeout='auto'
               unmountOnExit>
-              <List component="div" disablePadding>
-                <ListItem button>
-                  <ListItemIcon className={classes.drawerMenuListIcon}>
-                    <InboxRounded />
-                  </ListItemIcon>
-                  <ListItemText primary="Starred" />
-                </ListItem>
-              </List>
+              {menuItem.subMenuItems.map((subMenuItem, index) => (
+                <List key={subMenuItem.title} component='div' disablePadding>
+                  <ListItem button>
+                    <ListItemIcon className={classes.drawerMenuListIcon}>
+                      <RemoveRounded />
+                    </ListItemIcon>
+                    <ListItemText primary={subMenuItem.title} />
+                  </ListItem>
+                </List>
+              ))}
             </Collapse>
           </Box>
         ))}

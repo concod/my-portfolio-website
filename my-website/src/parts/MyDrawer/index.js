@@ -5,6 +5,7 @@ import { Box, Container } from '@material-ui/core'
 import clsx from 'clsx'
 import { drawerStyles } from './drawer-styles'
 import DrawerMenulist from './DrawerMenuList'
+import DrawerLeftBar from './DrawerLeftBar'
 
 const MyDrawer = () => {
   const [isOpen, setIsOpen] = useState(true)
@@ -28,8 +29,10 @@ const MyDrawer = () => {
       open={isOpen}>
       <DrawerToggleButton isOpen={isOpen} setIsOpen={setIsOpen} />
       {/* <Box bgcolor="yellow" overflow="hidden"> */}
-      <Box>hieeeeeeeeeeeeeeeeeee</Box>
-      <DrawerMenulist />
+      <Box display="flex">
+        <DrawerLeftBar />
+        <DrawerMenulist />
+      </Box>
       {/* </Box> */}
     </Drawer>
   )

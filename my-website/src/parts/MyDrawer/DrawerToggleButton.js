@@ -14,6 +14,7 @@ const DrawerToggleButton = ({ isOpen, setIsOpen }) => {
         [classes.drawerToggleIconRight]: !isOpen,
       })}
       size="small"
+      color="primary"
       onClick={() => setIsOpen(!isOpen)}>
       {isOpen ? <ChevronLeftRounded /> : <ChevronRightRounded />}
     </IconButton>
