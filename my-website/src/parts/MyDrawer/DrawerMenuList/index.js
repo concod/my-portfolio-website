@@ -17,7 +17,7 @@ import { generateListKeys } from 'utils/helpers/generate-list-keys'
 import { drawerMenuItems } from '../drawer-menu-items'
 import { PaddingLeftRight16, Padding16x16 } from 'components/PaddingSet'
 
-const DrawerMenulist = () => {
+const DrawerMenulist = ({ setIsOpen }) => {
   const classes = drawerStyles()
 
   const [menuItemOpen, setMenuItemOpen] = useState({
@@ -25,7 +25,6 @@ const DrawerMenulist = () => {
     currentOpenindex: null,
     open: false,
   })
-  //   console.log(menuItemOpen)
   const handleExpandedMenuItemClick = currentIndex => {
     if (menuItemOpen.open) {
       if (menuItemOpen.currentOpenindex === currentIndex)
@@ -59,9 +58,11 @@ const DrawerMenulist = () => {
         })
     }
   }
-  console.log(menuItemOpen)
   return (
-    <Padding16x16 className={classes.root}>
+    <Padding16x16
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+      className={classes.root}>
       <List component='nav'>
         {drawerMenuItems.map((menuItem, index) => (
           <Box key={generateListKeys('box', index)}>

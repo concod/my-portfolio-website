@@ -16,7 +16,7 @@ export const drawerMenuItems = [
     icon: <WebRounded />,
     subMenuItems: [
       {
-        title: 'ABC',
+        title: 'gBC',
       },
       {
         title: 'cd',

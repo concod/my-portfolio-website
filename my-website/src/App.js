@@ -6,6 +6,7 @@ import ThemeToggler from 'components/ThemeToggler'
 import ThemePalleteTray from 'components/ThemePalleteTray'
 import './App.css'
 import MyDrawer from 'parts/MyDrawer'
+import SearchDrawer from 'parts/SearchDrawer'
 
 const App = ({ theme, keys }) => {
   return (
@@ -13,6 +14,7 @@ const App = ({ theme, keys }) => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <MyDrawer />
+        <SearchDrawer />
         {/* <Button color="primary" variant="contained">
           hizzzzccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
         </Button> */}

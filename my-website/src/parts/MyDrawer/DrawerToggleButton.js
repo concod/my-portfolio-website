@@ -5,7 +5,6 @@ import clsx from 'clsx'
 import { drawerStyles } from './drawer-styles'
 
 const DrawerToggleButton = ({ isOpen, setIsOpen }) => {
-  console.log(isOpen)
   const classes = drawerStyles()
   return (
     <IconButton
@@ -13,8 +12,8 @@ const DrawerToggleButton = ({ isOpen, setIsOpen }) => {
         [classes.drawerToggleIconLeft]: isOpen,
         [classes.drawerToggleIconRight]: !isOpen,
       })}
-      size="small"
-      color="primary"
+      size='small'
+      color='primary'
       onClick={() => setIsOpen(!isOpen)}>
       {isOpen ? <ChevronLeftRounded /> : <ChevronRightRounded />}
     </IconButton>

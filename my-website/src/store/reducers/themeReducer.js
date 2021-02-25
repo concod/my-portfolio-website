@@ -31,7 +31,7 @@ const setTheme = (state, theme, switchToprevious = false) => {
       currentTheme: state.previousTheme,
     }
   } else {
-    console.log(theme.key)
+    // console.log(theme.key)
     localStorage.setItem(STORAGE_KEYS.THEME, theme.key)
     return {
       ...state,

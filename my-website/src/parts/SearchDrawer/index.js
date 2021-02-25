@@ -1,16 +1,15 @@
 import { useState } from 'react'
 import Drawer from '@material-ui/core/Drawer'
 import DrawerToggleButton from 'parts/MyDrawer/DrawerToggleButton'
-import { Box, Container } from '@material-ui/core'
+import { Box, Container, Input } from '@material-ui/core'
 import clsx from 'clsx'
-import { drawerStyles } from './drawer-styles'
-import DrawerMenulist from './DrawerMenuList'
-import DrawerLeftBar from './DrawerLeftBar'
+import { searchStyles } from './search-styles'
+import SearchedList from './SearchedList'
 
-const MyDrawer = () => {
+const SearchDrawer = () => {
   const [isOpen, setIsOpen] = useState(true)
-  const classes = drawerStyles()
-  console.log(isOpen)
+  const classes = searchStyles()
+
   return (
     <Drawer
       container={Container}
@@ -27,14 +26,9 @@ const MyDrawer = () => {
       variant='permanent'
       anchor='left'
       open={isOpen}>
-      <DrawerToggleButton isOpen={isOpen} setIsOpen={setIsOpen} />
-      <Box display='flex' height='100vh'>
-        <DrawerLeftBar />
-        <DrawerMenulist setIsOpen={setIsOpen} />
-      </Box>
-      {/* </Box> */}
+      <SearchedList />
     </Drawer>
   )
 }
 
-export default MyDrawer
+export default SearchDrawer
