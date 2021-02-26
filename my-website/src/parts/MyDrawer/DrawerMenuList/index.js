@@ -17,6 +17,7 @@ import { generateListKeys } from 'utils/helpers/generate-list-keys'
 import { drawerMenuItems } from '../drawer-menu-items'
 import { PaddingLeftRight16, Padding16x16 } from 'components/PaddingSet'
 import produce from 'immer'
+import clsx from 'clsx'
 
 const DrawerMenulist = ({ setIsOpen }) => {
   const classes = drawerStyles()
@@ -65,13 +66,17 @@ const DrawerMenulist = ({ setIsOpen }) => {
 
   return (
     <Padding16x16
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
+      // onMouseEnter={() => setIsOpen(true)}
+      // onMouseLeave={() => setIsOpen(false)}
       className={classes.root}>
       <List component='nav'>
         {drawerMenuItems.map((menuItem, index) => (
           <Box key={generateListKeys('box', index)}>
             <ListItem
+              className={clsx(classes.drawerMenuList, {
+                [classes.drawerMenuListActive]:
+                  index === menuItemOpen.currentOpenIndex,
+              })}
               button
               key={menuItem.title}
               onClick={() => handleExpandedMenuItemClick(index)}>

@@ -13,6 +13,7 @@ export const drawerStyles = makeStyles(theme => {
     },
     paper: {
       overflowX: 'hidden',
+      backgroundColor: theme.palette.secondary.main,
     },
     drawerOpen: {
       transition: theme.transitions.create('width', {
@@ -54,11 +55,15 @@ export const drawerStyles = makeStyles(theme => {
       }),
       marginLeft: theme.layout.collapsedDrawerWidth,
     },
+    drawerMenuListActive: {
+      borderLeft: `5px solid ${theme.palette.primary.light}`,
+    },
     drawerMenuListIcon: {
       minWidth: 40,
     },
     menuListText: {
       textTransform: 'uppercase',
+      fontFamily: 'Gustanlp',
       // fontSize: '14px !important',
     },
     leftBar: {

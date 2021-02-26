@@ -4,6 +4,22 @@ import THEMES_KEYS from 'utils/constants/theme-keys'
 import * as ACTIONS from 'store/actions'
 import { THEME_CUSTOM_PROPS } from 'utils/helpers/custom-theme-props'
 
+import GustanlpWoff2 from 'assets/fonts/Gustanlp-Medium.woff2'
+
+const Gustanlp = {
+  fontFamily: 'Gustanlp',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+  fontWeight: 400,
+  src: `
+  local('Gustanlp'),
+  local('Gustanlp-Regular'),
+    url(${GustanlpWoff2}) format('woff2')
+  `,
+  // unicodeRange:
+  //   'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
+}
+
 export const DARK = createMuiTheme({
   key: THEMES_KEYS.DARK,
   action: ACTIONS.setDarkTheme,
@@ -34,6 +50,11 @@ export const LIGHT_TYPE_ONE = createMuiTheme({
   key: THEMES_KEYS.LIGHT_TYPE_ONE,
   action: ACTIONS.setLightThemeOne,
   overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        '@font-face': [Gustanlp],
+      },
+    },
     MuiListItemIcon: {
       root: {
         minWidth: 0,
@@ -49,7 +70,7 @@ export const LIGHT_TYPE_ONE = createMuiTheme({
       main: '#0747A6',
       light: '#1C63CE',
       lighter: '#4C9AFF',
-      // lighter:'',
+      //
       navText: '#eeede8',
       navTitle: '#eeede8',
       navIcon: '#eeede8',
@@ -60,9 +81,10 @@ export const LIGHT_TYPE_ONE = createMuiTheme({
       cardColor: '#151e29',
       contrastText: '#fff',
     },
-    // text:{
-    //   main:
-    // }
+
+    secondary: {
+      main: '#F4F5F7',
+    },
   },
   layout: THEME_CUSTOM_PROPS.layout,
 })
@@ -76,7 +98,9 @@ export const LIGHT_TYPE_TWO = createMuiTheme({
       white: '#fff',
     },
     primary: {
-      main: '#ffeddf',
+      main: '#ff7700',
+      light: '#ff8c00',
+      lighter: '#ffa100',
       // light:
       navText: '#42382e',
       navTitle: '#42382e',
@@ -85,7 +109,10 @@ export const LIGHT_TYPE_TWO = createMuiTheme({
       headerTitle: '#42382e',
       headerText: '#42382e',
       projectTitle: '#42382e',
-      projectBody: 'red',
+      contrastText: '#fff',
+    },
+    secondary: {
+      main: '#fff',
     },
   },
   layout: THEME_CUSTOM_PROPS.layout,
@@ -101,8 +128,9 @@ export const LIGHT_TYPE_THREE = createMuiTheme({
       white: '#fff',
     },
     primary: {
-      main: '#f0ece3',
-      navColor: '#f0ece3',
+      main: '#01AD9F',
+      light: '#1AB59D',
+      lighter: '#1BB69C',
       navText: '#060607',
       navTitle: '#060607',
       navIcon: '#060607',
@@ -110,7 +138,10 @@ export const LIGHT_TYPE_THREE = createMuiTheme({
       headerTitle: '#42382e',
       headerText: '#42382e',
       projectTitle: '#42382e',
-      projectBody: '#fff',
+      contrastText: '#fff',
+    },
+    secondary: {
+      main: '#fff',
     },
   },
   layout: THEME_CUSTOM_PROPS.layout,
@@ -125,7 +156,7 @@ export const LIGHT_TYPE_FOUR = createMuiTheme({
       white: '#fff',
     },
     primary: {
-      main: '#e0d7ce',
+      main: '#767070',
       navColor: '#e0d7ce',
       navText: '#4c4c4c',
       navTitle: '#4c4c4c',
@@ -135,6 +166,9 @@ export const LIGHT_TYPE_FOUR = createMuiTheme({
       headerText: '#fcfcfc',
       projectTitle: '#fcfcfc',
       projectBody: 'lightgrey',
+    },
+    secondary: {
+      main: '#F7F7F7',
     },
   },
   layout: THEME_CUSTOM_PROPS.layout,
