@@ -33,24 +33,36 @@ export const DARK = createMuiTheme({
 export const LIGHT_TYPE_ONE = createMuiTheme({
   key: THEMES_KEYS.LIGHT_TYPE_ONE,
   action: ACTIONS.setLightThemeOne,
+  overrides: {
+    MuiListItemIcon: {
+      root: {
+        minWidth: 0,
+      },
+    },
+  },
   palette: {
     common: {
       black: '#000',
       white: '#fff',
     },
     primary: {
-      main: '#8b8b8b',
-      navColor: '#8b8b8b',
+      main: '#0747A6',
+      light: '#1C63CE',
+      lighter: '#4C9AFF',
+      // lighter:'',
       navText: '#eeede8',
       navTitle: '#eeede8',
       navIcon: '#eeede8',
-      headerColor: '#efeee8',
       headerTitle: '#4c4b4c',
       headerText: '#4c4b4c',
       projectBody: '#fbfbfb',
       projectTitle: '#4c4b4c',
       cardColor: '#151e29',
+      contrastText: '#fff',
     },
+    // text:{
+    //   main:
+    // }
   },
   layout: THEME_CUSTOM_PROPS.layout,
 })
@@ -65,7 +77,7 @@ export const LIGHT_TYPE_TWO = createMuiTheme({
     },
     primary: {
       main: '#ffeddf',
-      navColor: '#ffeddf',
+      // light:
       navText: '#42382e',
       navTitle: '#42382e',
       navIcon: '#42382e',
@@ -73,7 +85,7 @@ export const LIGHT_TYPE_TWO = createMuiTheme({
       headerTitle: '#42382e',
       headerText: '#42382e',
       projectTitle: '#42382e',
-      projectBody: '#EBECF0',
+      projectBody: 'red',
     },
   },
   layout: THEME_CUSTOM_PROPS.layout,

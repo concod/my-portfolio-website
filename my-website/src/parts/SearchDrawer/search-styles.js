@@ -12,6 +12,22 @@ export const searchStyles = makeStyles(theme => ({
     whiteSpace: 'nowrap',
   },
   paper: {
+    width: searchDrawerWidth,
     overflowX: 'hidden',
+  },
+  searchInput: {
+    flexGrow: 1,
+    marginLeft: 10,
+  },
+  searchSubheader: {
+    textTransform: 'capitalize',
+    marginBottom: -20,
+    marginTop: 0,
+  },
+  searchListContainer: {
+    marginBottom: -20,
+  },
+  searchListIcon: {
+    paddingRight: 10,
   },
 }))

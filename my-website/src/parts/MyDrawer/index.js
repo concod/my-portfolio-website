@@ -10,7 +10,6 @@ import DrawerLeftBar from './DrawerLeftBar'
 const MyDrawer = () => {
   const [isOpen, setIsOpen] = useState(true)
   const classes = drawerStyles()
-  console.log(isOpen)
   return (
     <Drawer
       container={Container}

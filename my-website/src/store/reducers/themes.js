@@ -22,8 +22,8 @@ const getInitialTheme = () => {
   }
 }
 
-const setTheme = (state, theme, switchToprevious = false) => {
-  if (switchToprevious) {
+const setTheme = (state, theme, switchToPrevious = false) => {
+  if (switchToPrevious) {
     localStorage.setItem(STORAGE_KEYS.THEME, state.previousTheme.key)
     return {
       ...state,
@@ -41,7 +41,7 @@ const setTheme = (state, theme, switchToprevious = false) => {
   }
 }
 
-export const themeReducer = createReducer(
+export default createReducer(
   {
     [ACTIONS.setDarkTheme]: state => setTheme(state, THEMES.DARK),
 

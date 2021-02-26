@@ -88,7 +88,7 @@ export const drawerMenuItems = [
   },
 ]
 
-export const leftBarTopItems = [
+export const leftBarTopItemSet = [
   {
     title: 'Home',
     icon: <HomeRounded fontSize='inherit' />,
@@ -99,7 +99,7 @@ export const leftBarTopItems = [
   },
 ]
 
-export const leftBarBottomItmes = [
+export const leftBarBottomItemSet = [
   {
     title: 'Theme',
     icon: <ColorLensRounded fontSize='inherit' />,

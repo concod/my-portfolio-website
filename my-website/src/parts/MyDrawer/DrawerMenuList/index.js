@@ -16,48 +16,53 @@ import { drawerStyles } from '../drawer-styles'
 import { generateListKeys } from 'utils/helpers/generate-list-keys'
 import { drawerMenuItems } from '../drawer-menu-items'
 import { PaddingLeftRight16, Padding16x16 } from 'components/PaddingSet'
+import produce from 'immer'
 
 const DrawerMenulist = ({ setIsOpen }) => {
   const classes = drawerStyles()
-
   const [menuItemOpen, setMenuItemOpen] = useState({
     previousOpenedIndex: null,
-    currentOpenindex: null,
+    currentOpenIndex: null,
     open: false,
   })
+
   const handleExpandedMenuItemClick = currentIndex => {
     if (menuItemOpen.open) {
-      if (menuItemOpen.currentOpenindex === currentIndex)
-        setMenuItemOpen({
-          ...menuItemOpen,
-          previousOpenedIndex: currentIndex,
-          currentOpenindex: null,
-          open: false,
-        })
+      if (menuItemOpen.currentOpenIndex === currentIndex)
+        setMenuItemOpen(
+          produce(draft => {
+            draft.previousOpenedIndex = currentIndex
+            draft.currentOpenIndex = null
+            draft.open = false
+          }),
+        )
       else
-        setMenuItemOpen({
-          ...menuItemOpen,
-          previousOpenedIndex: menuItemOpen.currentOpenindex,
-          currentOpenindex: currentIndex,
-          open: true,
-        })
+        setMenuItemOpen(
+          produce(draft => {
+            draft.previousOpenedIndex = draft.currentOpenIndex
+            draft.currentOpenIndex = currentIndex
+            draft.open = true
+          }),
+        )
     } else {
       if (menuItemOpen.previousOpenedIndex === currentIndex)
-        setMenuItemOpen({
-          ...menuItemOpen,
-          previousOpenedIndex: menuItemOpen.currentOpenindex,
-          currentOpenindex: currentIndex,
-          open: true,
-        })
+        setMenuItemOpen(
+          produce(draft => {
+            draft.previousOpenedIndex = draft.currentOpenIndex
+            draft.currentOpenIndex = currentIndex
+            draft.open = true
+          }),
+        )
       else
-        setMenuItemOpen({
-          ...menuItemOpen,
-          previousOpenedIndex: menuItemOpen.previousOpenedIndex,
-          currentOpenindex: currentIndex,
-          open: true,
-        })
+        setMenuItemOpen(
+          produce(draft => {
+            draft.currentOpenIndex = currentIndex
+            draft.open = true
+          }),
+        )
     }
   }
+
   return (
     <Padding16x16
       onMouseEnter={() => setIsOpen(true)}
@@ -77,14 +82,14 @@ const DrawerMenulist = ({ setIsOpen }) => {
                 className={classes.menuListText}
                 primary={menuItem.title}
               />
-              {menuItemOpen.currentOpenindex === index ? (
+              {menuItemOpen.currentOpenIndex === index ? (
                 <ExpandMoreRounded />
               ) : (
                 <ChevronRight />
               )}
             </ListItem>
             <Collapse
-              in={index === menuItemOpen.currentOpenindex && menuItemOpen.open}
+              in={index === menuItemOpen.currentOpenIndex && menuItemOpen.open}
               timeout='auto'
               unmountOnExit>
               {menuItem.subMenuItems.map((subMenuItem, index) => (

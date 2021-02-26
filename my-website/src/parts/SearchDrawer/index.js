@@ -5,14 +5,19 @@ import { Box, Container, Input } from '@material-ui/core'
 import clsx from 'clsx'
 import { searchStyles } from './search-styles'
 import SearchedList from './SearchedList'
+import { useDispatch, useSelector } from 'react-redux'
+import { setIsSearchDrawerOpen } from 'store/actions'
 
 const SearchDrawer = () => {
-  const [isOpen, setIsOpen] = useState(true)
   const classes = searchStyles()
-
+  const isOpen = useSelector(state => state.drawers.isSearchDrawerOpen)
+  const dispatch = useDispatch()
+  console.log(isOpen)
   return (
     <Drawer
-      container={Container}
+      onBackdropClick={() => dispatch(setIsSearchDrawerOpen(false))}
+      anchor='left'
+      open={isOpen}
       className={clsx(classes.drawer, {
         [classes.drawerOpen]: isOpen,
         [classes.drawerClose]: !isOpen,
@@ -22,11 +27,8 @@ const SearchDrawer = () => {
           { [classes.drawerOpen]: isOpen, [classes.drawerClose]: !isOpen },
           classes.paper,
         ),
-      }}
-      variant='permanent'
-      anchor='left'
-      open={isOpen}>
-      <SearchedList />
+      }}>
+      <SearchedList dispatch={dispatch} />
     </Drawer>
   )
 }
