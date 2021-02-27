@@ -6,6 +6,7 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  Typography,
 } from '@material-ui/core'
 import {
   ChevronRight,
@@ -15,11 +16,12 @@ import {
 import { drawerStyles } from '../drawer-styles'
 import { generateListKeys } from 'utils/helpers/generate-list-keys'
 import { drawerMenuItems } from '../drawer-menu-items'
-import { PaddingLeftRight16, Padding16x16 } from 'components/PaddingSet'
+import { PaddingAxB } from 'components/PaddingSet'
 import produce from 'immer'
 import clsx from 'clsx'
+import { DRAWER_CONST } from 'utils/constants/drawer-constants'
 
-const DrawerMenulist = ({ setIsOpen }) => {
+const DrawerMenulist = ({ isOpen, setIsOpen }) => {
   const classes = drawerStyles()
   const [menuItemOpen, setMenuItemOpen] = useState({
     previousOpenedIndex: null,
@@ -65,7 +67,9 @@ const DrawerMenulist = ({ setIsOpen }) => {
   }
 
   return (
-    <Padding16x16
+    <PaddingAxB
+      A={DRAWER_CONST.paddingLeftRight / 2}
+      B={DRAWER_CONST.paddingLeftRight / 2}
       // onMouseEnter={() => setIsOpen(true)}
       // onMouseLeave={() => setIsOpen(false)}
       className={classes.root}>
@@ -75,7 +79,7 @@ const DrawerMenulist = ({ setIsOpen }) => {
             <ListItem
               className={clsx(classes.drawerMenuList, {
                 [classes.drawerMenuListActive]:
-                  index === menuItemOpen.currentOpenIndex,
+                  index === menuItemOpen.currentOpenIndex && isOpen,
               })}
               button
               key={menuItem.title}
@@ -83,10 +87,9 @@ const DrawerMenulist = ({ setIsOpen }) => {
               <ListItemIcon className={classes.drawerMenuListIcon}>
                 {menuItem.icon}
               </ListItemIcon>
-              <ListItemText
-                className={classes.menuListText}
-                primary={menuItem.title}
-              />
+              <ListItemText className={classes.drawerMenuListText}>
+                <Typography variant='h5'>{menuItem.title}</Typography>
+              </ListItemText>
               {menuItemOpen.currentOpenIndex === index ? (
                 <ExpandMoreRounded />
               ) : (
@@ -99,7 +102,7 @@ const DrawerMenulist = ({ setIsOpen }) => {
               unmountOnExit>
               {menuItem.subMenuItems.map((subMenuItem, index) => (
                 <List key={subMenuItem.title} component='div' disablePadding>
-                  <ListItem button>
+                  <ListItem button style={{ pointerEvents: !isOpen && 'none' }}>
                     <ListItemIcon className={classes.drawerMenuListIcon}>
                       <RemoveRounded />
                     </ListItemIcon>
@@ -111,7 +114,7 @@ const DrawerMenulist = ({ setIsOpen }) => {
           </Box>
         ))}
       </List>
-    </Padding16x16>
+    </PaddingAxB>
   )
 }
 

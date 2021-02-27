@@ -16,18 +16,19 @@ export const drawerStyles = makeStyles(theme => {
       backgroundColor: theme.palette.secondary.main,
     },
     drawerOpen: {
-      transition: theme.transitions.create('width', {
+      transition: theme.transitions.create(['width', 'background-color'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
       }),
       width: theme.layout.expandedDrawerWidth,
     },
     drawerClose: {
-      transition: theme.transitions.create('width', {
+      transition: theme.transitions.create(['width', 'background-color'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
       }),
       width: theme.layout.collapsedDrawerWidth,
+      backgroundColor: '',
     },
     drawerToggleButton: {
       position: 'fixed',
@@ -47,6 +48,11 @@ export const drawerStyles = makeStyles(theme => {
         duration: theme.transitions.duration.enteringScreen,
       }),
       marginLeft: theme.layout.expandedDrawerWidth,
+      // transition: theme.transitions.create('margin', {
+      //   easing: theme.transitions.easing.sharp,
+      //   duration: theme.transitions.duration.enteringScreen,
+      // }),
+      // marginLeft: theme.layout.expandedDrawerWidth,
     },
     drawerToggleIconRight: {
       transition: theme.transitions.create('margin', {
@@ -55,16 +61,21 @@ export const drawerStyles = makeStyles(theme => {
       }),
       marginLeft: theme.layout.collapsedDrawerWidth,
     },
+    drawerMenuList: {
+      transition: theme.transitions.create(['border-left'], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
+      borderLeft: `3px solid ${theme.palette.secondary.main}`,
+    },
     drawerMenuListActive: {
-      borderLeft: `5px solid ${theme.palette.primary.light}`,
+      borderLeft: `3px solid ${theme.palette.primary.light}`,
+    },
+    drawerMenuListText: {
+      textTransform: 'uppercase',
     },
     drawerMenuListIcon: {
       minWidth: 40,
-    },
-    menuListText: {
-      textTransform: 'uppercase',
-      fontFamily: 'Gustanlp',
-      // fontSize: '14px !important',
     },
     leftBar: {
       backgroundColor: theme.palette.primary.main,

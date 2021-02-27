@@ -3,6 +3,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 
 const useStyles = makeStyles(_ => ({
+  paddingAxB: {
+    padding: ({ A, B }) => `${A}px ${B}px ${A}px ${B}px`,
+  },
   padding16x16: {
     padding: 16,
   },
@@ -53,6 +56,11 @@ const PaddingLeftRight16 = ({ className, ...rest }) => {
       {...rest}
     />
   )
+}
+const PaddingAxB = ({ className, A, B, ...rest }) => {
+  const classes = useStyles({ A, B })
+
+  return <div className={clsx(classes.paddingAxB, className)} {...rest} />
 }
 const Padding16x16 = ({ className, ...rest }) => {
   const classes = useStyles()
@@ -123,6 +131,7 @@ const PaddingDynamicBetween = ({ children, right = 0, className }) => {
 }
 export {
   Padding16x16,
+  PaddingAxB,
   Padding32x16BetweenRow16,
   PaddingLeftRight16,
   PaddingLeftRight32,

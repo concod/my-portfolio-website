@@ -48,7 +48,7 @@ const SearchedList = ({ dispatch }) => {
         <Input
           className={classes.searchInput}
           placeholder='Search for code, games and more...'
-          value={input}
+          value={input ?? ''}
           onChange={e => setInputValue(e.target.value)}
         />
       </Box>
@@ -63,7 +63,7 @@ const SearchedList = ({ dispatch }) => {
               </ListSubheader>
             }>
             {subMenuItems.map(({ title }) => (
-              <ListItem button>
+              <ListItem key={title} button>
                 <ListItemIcon className={classes.searchListIcon}>
                   {icon}
                 </ListItemIcon>

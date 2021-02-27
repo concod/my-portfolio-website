@@ -14,7 +14,11 @@ const DrawerLeftBar = () => {
     <PaddingTopDown16 className={classes.leftBar}>
       <List>
         {leftBarTopItemSet.map(item => (
-          <ListItem className={classes.leftBarListItem} key={item.title} button>
+          <ListItem
+            aria-label={item.title}
+            className={classes.leftBarListItem}
+            key={item.title}
+            button>
             <ListItemIcon
               // className={classes.leftBarIcons}
               onClick={() =>
@@ -28,7 +32,11 @@ const DrawerLeftBar = () => {
       </List>
       <List>
         {leftBarBottomItemSet.map(item => (
-          <ListItem className={classes.leftBarListItem} key={item.title} button>
+          <ListItem
+            aria-label={item.title}
+            className={classes.leftBarListItem}
+            key={item.title}
+            button>
             <ListItemIcon className={classes.leftBarIcon}>
               {item.icon}
             </ListItemIcon>

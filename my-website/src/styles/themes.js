@@ -4,21 +4,21 @@ import THEMES_KEYS from 'utils/constants/theme-keys'
 import * as ACTIONS from 'store/actions'
 import { THEME_CUSTOM_PROPS } from 'utils/helpers/custom-theme-props'
 
-import GustanlpWoff2 from 'assets/fonts/Gustanlp-Medium.woff2'
+// import GustanlpWoff2 from '/assets/fonts/Gustanlp-Medium.woff2'
 
-const Gustanlp = {
-  fontFamily: 'Gustanlp',
-  fontStyle: 'normal',
-  fontDisplay: 'swap',
-  fontWeight: 400,
-  src: `
-  local('Gustanlp'),
-  local('Gustanlp-Regular'),
-    url(${GustanlpWoff2}) format('woff2')
-  `,
-  // unicodeRange:
-  //   'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
-}
+// const Gustanlp = {
+//   fontFamily: 'Gustanlp',
+//   fontStyle: 'normal',
+//   fontDisplay: 'swap',
+//   fontWeight: 400,
+//   src: `
+//   local('Gustanlp'),
+//   local('Gustanlp-Regular'),
+//   url() format('woff2')
+//   `,
+// unicodeRange:
+//   'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
+// }
 
 export const DARK = createMuiTheme({
   key: THEMES_KEYS.DARK,
@@ -50,11 +50,11 @@ export const LIGHT_TYPE_ONE = createMuiTheme({
   key: THEMES_KEYS.LIGHT_TYPE_ONE,
   action: ACTIONS.setLightThemeOne,
   overrides: {
-    MuiCssBaseline: {
-      '@global': {
-        '@font-face': [Gustanlp],
-      },
-    },
+    // MuiCssBaseline: {
+    //   '@global': {
+    //     '@font-face': [Gustanlp],
+    //   },
+    // },
     MuiListItemIcon: {
       root: {
         minWidth: 0,
@@ -84,6 +84,14 @@ export const LIGHT_TYPE_ONE = createMuiTheme({
 
     secondary: {
       main: '#F4F5F7',
+    },
+  },
+  typography: {
+    h5: {
+      fontWeight: 400,
+      fontSize: 14,
+      lineHeight: 1.4,
+      letterSpacing: 'normal',
     },
   },
   layout: THEME_CUSTOM_PROPS.layout,

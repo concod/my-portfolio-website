@@ -29,7 +29,7 @@ const MyDrawer = () => {
       <DrawerToggleButton isOpen={isOpen} setIsOpen={setIsOpen} />
       <Box display='flex' height='100vh'>
         <DrawerLeftBar />
-        <DrawerMenulist setIsOpen={setIsOpen} />
+        <DrawerMenulist isOpen={isOpen} setIsOpen={setIsOpen} />
       </Box>
       {/* </Box> */}
     </Drawer>
