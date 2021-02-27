@@ -16,14 +16,14 @@ const DrawerLeftBar = () => {
         {leftBarTopItemSet.map(item => (
           <ListItem
             aria-label={item.title}
+            button
             className={classes.leftBarListItem}
             key={item.title}
-            button>
+            onClick={() =>
+              item.title === 'Search' && dispatch(setIsSearchDrawerOpen(true))
+            }>
             <ListItemIcon
               // className={classes.leftBarIcons}
-              onClick={() =>
-                item.title === 'Search' && dispatch(setIsSearchDrawerOpen(true))
-              }
               className={classes.leftBarIcon}>
               {item.icon}
             </ListItemIcon>

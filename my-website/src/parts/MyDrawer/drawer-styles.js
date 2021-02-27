@@ -5,11 +5,12 @@ export const drawerStyles = makeStyles(theme => {
   return {
     root: {
       width: '100%',
+      overflowY: 'scroll',
     },
     drawer: {
       width: theme.layout.expandedDrawerWidth,
-      flexShrink: 0,
-      whiteSpace: 'nowrap',
+      // flexShrink: 0,
+      // whiteSpace: 'nowrap',
     },
     paper: {
       overflowX: 'hidden',
@@ -48,11 +49,6 @@ export const drawerStyles = makeStyles(theme => {
         duration: theme.transitions.duration.enteringScreen,
       }),
       marginLeft: theme.layout.expandedDrawerWidth,
-      // transition: theme.transitions.create('margin', {
-      //   easing: theme.transitions.easing.sharp,
-      //   duration: theme.transitions.duration.enteringScreen,
-      // }),
-      // marginLeft: theme.layout.expandedDrawerWidth,
     },
     drawerToggleIconRight: {
       transition: theme.transitions.create('margin', {

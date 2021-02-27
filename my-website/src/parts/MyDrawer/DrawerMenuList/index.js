@@ -68,11 +68,12 @@ const DrawerMenulist = ({ isOpen, setIsOpen }) => {
 
   return (
     <PaddingAxB
+      className={classes.root}
       A={DRAWER_CONST.paddingLeftRight / 2}
       B={DRAWER_CONST.paddingLeftRight / 2}
       // onMouseEnter={() => setIsOpen(true)}
       // onMouseLeave={() => setIsOpen(false)}
-      className={classes.root}>
+    >
       <List component='nav'>
         {drawerMenuItems.map((menuItem, index) => (
           <Box key={generateListKeys('box', index)}>

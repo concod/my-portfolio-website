@@ -6,6 +6,7 @@ import clsx from 'clsx'
 import { drawerStyles } from './drawer-styles'
 import DrawerMenulist from './DrawerMenuList'
 import DrawerLeftBar from './DrawerLeftBar'
+import SearchDrawer from 'parts/SearchDrawer'
 
 const MyDrawer = () => {
   const [isOpen, setIsOpen] = useState(true)
@@ -24,8 +25,9 @@ const MyDrawer = () => {
         ),
       }}
       variant='permanent'
-      anchor='left'
+      // anchor='right'
       open={isOpen}>
+      <SearchDrawer />
       <DrawerToggleButton isOpen={isOpen} setIsOpen={setIsOpen} />
       <Box display='flex' height='100vh'>
         <DrawerLeftBar />

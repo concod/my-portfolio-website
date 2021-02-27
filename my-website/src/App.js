@@ -7,20 +7,26 @@ import ThemePalleteTray from 'components/ThemePalleteTray'
 import './App.css'
 import MyDrawer from 'parts/MyDrawer'
 import SearchDrawer from 'parts/SearchDrawer'
+import Layout from 'parts/Layout'
 
 const App = ({ theme, keys }) => {
   return (
     <MuiThemeProvider theme={theme}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div>
+        {/* <div>
           hikkkkkkkkkkkkkkkkolkokokokokokokokoookookokkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-        </div>
-        <MyDrawer />
-        <SearchDrawer />
+        </div> */}
+        {/* <MyDrawer /> */}
+        {/* <SearchDrawer /> */}
         {/* <Button color="primary" variant="contained">
           hizzzzccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
         </Button> */}
+        <Layout>
+          <div>
+            hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+          </div>
+        </Layout>
         <ThemePalleteTray />
         {/* <ThemeToggler /> */}
       </ThemeProvider>
