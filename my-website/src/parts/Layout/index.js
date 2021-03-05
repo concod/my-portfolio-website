@@ -19,21 +19,20 @@ const useStyles = makeStyles(theme => ({
   },
   content: {
     flexGrow: 1,
+    padding: 20,
   },
 }))
 
-const Layout = React.forwardRef(({ children }) => {
+const Layout = ({ children }) => {
   const classes = useStyles()
 
   return (
-    <Box className={classes.root}>
+    <div className={classes.root}>
       <MyDrawer />
 
-      <main className={classes.content}>
-        <Box padding='20px'>{children}</Box>
-      </main>
-    </Box>
+      <main className={classes.content}>{children}</main>
+    </div>
   )
-})
+}
 
 export default Layout

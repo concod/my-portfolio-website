@@ -9,16 +9,16 @@ import THEMES_KEYS from 'utils/constants/theme-keys'
 const ThemeToggler = () => {
   const key = useSelector(({ themes }) => themes.currentTheme.key)
   const dispatch = useDispatch()
-
+  console.log(key)
   const handleToggle = () => {
     if (key === THEMES_KEYS.DARK) dispatch(switchToPreviousTheme())
     else dispatch(setDarkTheme())
   }
   return (
-    <Box display="flex" width="fit-content">
+    <Box display='flex' width='fit-content'>
       <IconButton
-        aria-label="Toggle light/dark theme"
-        component="span"
+        aria-label='Toggle light/dark theme'
+        component='span'
         onClick={handleToggle}>
         {key === THEMES_KEYS.DARK ? (
           <Brightness7Rounded />

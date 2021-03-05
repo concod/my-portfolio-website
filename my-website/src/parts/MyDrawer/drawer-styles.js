@@ -9,8 +9,8 @@ export const drawerStyles = makeStyles(theme => {
     },
     drawer: {
       width: theme.layout.expandedDrawerWidth,
-      // flexShrink: 0,
-      // whiteSpace: 'nowrap',
+      flexShrink: 0,
+      whiteSpace: 'nowrap',
     },
     paper: {
       overflowX: 'hidden',
@@ -33,6 +33,7 @@ export const drawerStyles = makeStyles(theme => {
     },
     drawerToggleButton: {
       position: 'fixed',
+      top: 20,
       transform: 'translateX(-50%)',
       backgroundColor: theme.palette.primary.contrastText,
       color: 'black',
@@ -63,15 +64,22 @@ export const drawerStyles = makeStyles(theme => {
         duration: theme.transitions.duration.leavingScreen,
       }),
       borderLeft: `3px solid ${theme.palette.secondary.main}`,
+      color: theme.palette.secondary.contrastText,
     },
     drawerMenuListActive: {
       borderLeft: `3px solid ${theme.palette.primary.light}`,
     },
     drawerMenuListText: {
       textTransform: 'uppercase',
+      // fontWeight: 'bold',
     },
     drawerMenuListIcon: {
       minWidth: 40,
+      color: 'inherit',
+    },
+    drawerSubMenuList: {
+      backgroundColor: theme.palette.secondary.light,
+      color: theme.palette.primary.main,
     },
     leftBar: {
       backgroundColor: theme.palette.primary.main,

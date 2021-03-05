@@ -3,10 +3,10 @@ import { useDispatch } from 'react-redux'
 import { Box, Button } from '@material-ui/core'
 import { ColorLensRounded } from '@material-ui/icons'
 
-import * as THEMES from 'styles/themes'
 import myStyle from 'styles/makeMyStyle'
 
-import THEMES_KEYS from 'utils/constants/theme-keys'
+import THEME_KEYS from 'utils/constants/theme-keys'
+import THEMES from 'styles/theme'
 
 const trayWidth = 130
 
@@ -52,7 +52,7 @@ const ThemePalleteTray = () => {
         flexWrap='wrap'>
         {Object.entries(THEMES).map(
           ([key, value], index) =>
-            key !== THEMES_KEYS.DARK && (
+            key !== THEME_KEYS.DARK && (
               <Button
                 key={value.key}
                 onClick={() => dispatch(value.action())}

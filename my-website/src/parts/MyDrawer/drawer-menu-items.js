@@ -9,6 +9,7 @@ import {
   WebRounded,
   WorkRounded,
 } from '@material-ui/icons'
+import { PAGES } from 'utils/constants/pages-links'
 
 export const drawerMenuItems = [
   {
@@ -16,13 +17,12 @@ export const drawerMenuItems = [
     icon: <WebRounded />,
     subMenuItems: [
       {
-        title: 'gBC',
+        title: 'Homestay',
+        link: PAGES.LANDING_PAGES_VIEW,
       },
       {
-        title: 'cd',
-      },
-      {
-        title: 'ef',
+        title: 'Nestaway',
+        link: PAGES.LANDING_PAGES_VIEW,
       },
     ],
   },
@@ -31,13 +31,12 @@ export const drawerMenuItems = [
     icon: <WorkRounded />,
     subMenuItems: [
       {
-        title: 'gh',
+        title: 'Company A',
+        link: PAGES.WORK_VIEW,
       },
       {
-        title: 'oj',
-      },
-      {
-        title: 'kl',
+        title: 'Company B',
+        link: PAGES.WORK_VIEW,
       },
     ],
   },
@@ -46,13 +45,16 @@ export const drawerMenuItems = [
     icon: <ImportContacts />,
     subMenuItems: [
       {
-        title: 'mn',
+        title: 'Component one',
+        link: PAGES.STORY_BOOK_VIEW,
       },
       {
-        title: 'ol',
+        title: 'Component Two',
+        link: PAGES.STORY_BOOK_VIEW,
       },
       {
-        title: 'kC',
+        title: 'Component Three',
+        link: PAGES.STORY_BOOK_VIEW,
       },
     ],
   },
@@ -61,13 +63,16 @@ export const drawerMenuItems = [
     icon: <SportsEsportsRounded />,
     subMenuItems: [
       {
-        title: 'pllC',
+        title: 'Tetris',
+        link: PAGES.GAMES_VIEW,
       },
       {
-        title: 'Add',
+        title: 'Scrambled',
+        link: PAGES.GAMES_VIEW,
       },
       {
-        title: 'dd',
+        title: 'Cricket',
+        link: PAGES.GAMES_VIEW,
       },
     ],
   },
@@ -76,13 +81,12 @@ export const drawerMenuItems = [
     icon: <TabletMacRounded />,
     subMenuItems: [
       {
-        title: 'dd',
+        title: 'Github Profile Viewer',
+        link: PAGES.WEB_APPS_VIEW,
       },
       {
-        title: 'ABddC',
-      },
-      {
-        title: 'ABkk',
+        title: 'Slack',
+        link: PAGES.WEB_APPS_VIEW,
       },
     ],
   },
@@ -92,6 +96,7 @@ export const leftBarTopItemSet = [
   {
     title: 'Home',
     icon: <HomeRounded fontSize='inherit' />,
+    link: PAGES.HOME,
   },
   {
     title: 'Search',

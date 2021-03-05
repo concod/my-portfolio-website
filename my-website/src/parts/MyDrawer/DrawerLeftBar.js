@@ -1,8 +1,10 @@
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { List, ListItem, ListItemIcon } from '@material-ui/core'
 
 import { setIsSearchDrawerOpen } from 'store/actions'
 import { PaddingTopDown16 } from 'components/PaddingSet'
+
 import { leftBarBottomItemSet, leftBarTopItemSet } from './drawer-menu-items'
 import { drawerStyles } from './drawer-styles'
 
@@ -17,14 +19,14 @@ const DrawerLeftBar = () => {
           <ListItem
             aria-label={item.title}
             button
+            component={item.link && Link}
+            to={item.link && item.link}
             className={classes.leftBarListItem}
             key={item.title}
             onClick={() =>
               item.title === 'Search' && dispatch(setIsSearchDrawerOpen(true))
             }>
-            <ListItemIcon
-              // className={classes.leftBarIcons}
-              className={classes.leftBarIcon}>
+            <ListItemIcon className={classes.leftBarIcon}>
               {item.icon}
             </ListItemIcon>
           </ListItem>

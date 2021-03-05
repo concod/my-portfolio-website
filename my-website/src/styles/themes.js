@@ -81,14 +81,16 @@ export const LIGHT_TYPE_ONE = createMuiTheme({
       cardColor: '#151e29',
       contrastText: '#fff',
     },
-
     secondary: {
       main: '#F4F5F7',
+      light: '#EAEBED',
+      contrastText: '#525252',
     },
   },
+
   typography: {
     h5: {
-      fontWeight: 400,
+      fontWeight: 'bold',
       fontSize: 14,
       lineHeight: 1.4,
       letterSpacing: 'normal',
